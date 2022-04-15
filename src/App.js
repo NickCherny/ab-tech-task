@@ -1,24 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import { ThemeProvider } from 'styled-components';
+import { Box } from './components/Box';
+import { customTheme } from './constants/theme';
+import { SoundGallery } from './components/SoundGallery';
+import { Article } from './components/Article';
+import soundsMock from './__mock__/sounds.json';
+import articlesMock from './__mock__/articles.json';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <ThemeProvider theme={customTheme}>
+      <Box
+        as="main"
+        minHeight={['auto', 'auto', '100vh']}
+        minWidth="320px"
+        display="flex"
+        flexWrap="wrap"
+      >
+        <Box width={[1, 1 / 2]}>
+          <SoundGallery items={soundsMock} />
+        </Box>
+        <Box
+          display="flex"
+          alignItems={['flex-start', 'center']}
+          width={[1, 1 / 2]}
+          paddingX={[5, 8, 8]}
+          paddingY={[5, 7, 7]}
         >
-          Learn React
-        </a>
-      </header>
-    </div>
+          <Article
+            title={articlesMock[0].title}
+            text={articlesMock[0].content}
+          />
+        </Box>
+      </Box>
+    </ThemeProvider>
   );
 }
 

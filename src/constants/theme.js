@@ -1,0 +1,25 @@
+export const customTheme = {
+  space: [2, 4, 8, 16, 18, 20, 28, 32, 64],
+  fontSizes: [
+    '6px',
+    '8px',
+    '10px',
+    '12px',
+    '16px',
+    '18px',
+    '24px',
+    '26px',
+    '32px',
+    '42px',
+    '46px',
+    '48px',
+    '56px',
+  ],
+  breakpoints: ['40em', '52em', '64em'],
+  bii: ['8px', '16px', '32px'],
+  colors: {
+    light: '#FFF',
+    dark: '#000',
+    brandPrimary: '#0831f5',
+  },
+};
